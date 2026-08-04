@@ -25,7 +25,11 @@ def save_seen(seen):
 
 async def fetch_posts():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True, args=['--no-sandbox'])
+        browser = await p.chromium.launch(
+            headless=True,
+            args=['--no-sandbox'],
+            executable_path='/vercel/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell'
+        )
         context = await browser.new_context(user_agent='Mozilla/5.0')
         page = await context.new_page()
         posts = []
@@ -100,12 +104,12 @@ def dashboard():
 </style></head>
 <body><div class="container">
 <div class="logo">🔴 GoreByte</div><p class="subtitle">Monitoring System</p>
-<div class="card"><div class="card-title">Status</div><div><span class="pulse"></span><span class="status-text">Active</span></div><p style="color:#555;margin-top:8px;font-size:.9em">Checking every 186,000 mi/sec</p></div>
+<div class="card"><div class="card-title">Status</div><div><span class="pulse"></span><span class="status-text">Active</span></div><p style="color:#555;margin-top:8px;font-size:.9em">Checking every 60s</p></div>
 <div class="card"><div class="card-title">Config</div>
 <div class="info-row"><span class="info-label">Source</span><span class="info-value">https://www.fbi.gov/</span></div>
 <div class="info-row"><span class="info-label">Interval</span><span class="info-value">186,000 mi/sec</span></div>
 <div class="info-row"><span class="info-label">Webhook</span><span class="badge">Set</span></div></div>
-<div class="footer">GoreByte v1.0 • {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} UTC</div>
+<div class="footer">GoreByte v1.0</div>
 </div></body></html>'''
 
 if __name__ == '__main__':
