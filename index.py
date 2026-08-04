@@ -46,7 +46,7 @@ def dashboard():
             <div class="info-row"><span class="info-label">Webhook</span><span class="badge">Configured</span></div>
             <div class="info-row"><span class="info-label">Platform</span><span class="info-value">Vercel Free</span></div>
         </div>
-        <div class="footer">GoreByte v1.0 • {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} UTC</div>
+        <div class="footer">GoreByte v1.0 • ''' + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ''' UTC</div>
     </div>
 </body>
 </html>'''
