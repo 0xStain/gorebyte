@@ -77,7 +77,7 @@ def handler(request):
     
     save_seen(all_posts)
     
-    webhook = os.environ.get("https://discord.com/api/webhooks/1534195842569994322/9BxxdNuLqiX6cv8FpslIz_F26QOpiRa21Vfl1ZWbDgwGj2y3w57d-KSx0UxiCYK8EDF0")
+    webhook = os.environ.get("DISCORD_WEBHOOK")
     sent = 0
     for post in new_posts:
         try:
