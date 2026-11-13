@@ -1,6 +1,24 @@
-__pycache__
-*.pyc
-.venv
-venv
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+.env/
+
+# Secrets
 .env
-/tmp
+.env.*
+!.env.example
+config.py
+config.local.py
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
