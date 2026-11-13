@@ -1,0 +1,9 @@
+{
+  "buildCommand": "bash build.sh",
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "* * * * *"
+    }
+  ]
+}
